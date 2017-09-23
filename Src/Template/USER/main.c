@@ -12,7 +12,7 @@
 	printf("t:%d\n",t);
 	delay_ms(500);
 	t++;      
-	
+
 	}
  }
 
