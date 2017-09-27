@@ -49,7 +49,7 @@ parser.add_argument('-nc','--not_clear',action = 'store_true',help="not clear wh
 parser.add_argument('-fs','--filter_string',default="",help="build output filter string, default as NULL")
 args = parser.parse_args()
 
-if args.release and args.release:
+if args.debug and args.release:
 	exit_p("comand error: -d & -r, can not both used")
 	
 if args.release :
