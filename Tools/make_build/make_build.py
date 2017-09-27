@@ -41,21 +41,22 @@ def exit_p(str):
 # add argparse for build
 parser = argparse.ArgumentParser(description="Build your program command")
 parser.add_argument('-pd','--prj_dir', help="Build program dirction")
-parser.add_argument('-bm','--build_mode', default= "Debug", help="Build program mode: d/D/debug/Debug/r/R/release/Release/ut/UT/unittest/UnitTest,default as Debug")
+parser.add_argument('-d','--debug',  action = 'store_true',help="Build program mode: debug")
+parser.add_argument('-r','--release',  action = 'store_true',help="Build program mode: release")
 parser.add_argument('-l','--local',  action = 'store_true',help="not update to last version, make firmware with current local version")
 parser.add_argument('-n','--not_changed',action = 'store_true',help="not allow changed files when make firmware")
 parser.add_argument('-nc','--not_clear',action = 'store_true',help="not clear when build")
-parser.add_argument('-fs','--filter_string',default="Error",help="build output filter string, default as Error")
+parser.add_argument('-fs','--filter_string',default="",help="build output filter string, default as NULL")
 args = parser.parse_args()
 
-if args.build_mode == "Debug" or args.build_mode == "debug" or args.build_mode == "D" or args.build_mode == "d" :
-    build_obj.build_mode = "Debug"
-elif args.build_mode == "Release" or args.build_mode == "release" or args.build_mode == "R" or args.build_mode == "r" :
-    build_obj.build_mode = "Release"
-elif args.build_mode == "UnitTest" or args.build_mode == "unittest" or args.build_mode == "UT" or args.build_mode == "ut":
-    build_obj.build_mode = "UnitTest"
+if args.release and args.release:
+	exit_p("comand error: -d & -r, can not both used")
+	
+if args.release :
+	build_obj.build_mode = "Release"
 else:
-    build_obj.build_mode = "Debug"
+	build_obj.build_mode = "Debug"
+	
 
 if args.filter_string:
     build_obj.filter_str = args.filter_string
