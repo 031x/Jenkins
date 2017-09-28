@@ -214,7 +214,7 @@
       <OPTFL>
         <tvExp>1</tvExp>
         <tvExpOptDlg>0</tvExpOptDlg>
-        <IsCurrentTarget>0</IsCurrentTarget>
+        <IsCurrentTarget>1</IsCurrentTarget>
       </OPTFL>
       <CpuCode>0</CpuCode>
       <DebugOpt>
@@ -294,8 +294,42 @@
         <newCpu>0</newCpu>
         <uProt>0</uProt>
       </DebugFlag>
-      <LintExecutable></LintExecutable>
-      <LintConfigFile></LintConfigFile>
+      <LintExecutable>C:\lint\lint-nt.exe</LintExecutable>
+      <LintConfigFile>.\PROJ_CO-RV.LNT</LintConfigFile>
+      <LintIncludes>
+        <Li>
+          <IntNumber>0</IntNumber>
+          <ItemText>..\SYSTEM\sys</ItemText>
+        </Li>
+        <Li>
+          <IntNumber>1</IntNumber>
+          <ItemText>..\SYSTEM\delay</ItemText>
+        </Li>
+        <Li>
+          <IntNumber>2</IntNumber>
+          <ItemText>..\SYSTEM\usart</ItemText>
+        </Li>
+        <Li>
+          <IntNumber>3</IntNumber>
+          <ItemText>..\USER</ItemText>
+        </Li>
+        <Li>
+          <IntNumber>4</IntNumber>
+          <ItemText>..\CORE</ItemText>
+        </Li>
+        <Li>
+          <IntNumber>5</IntNumber>
+          <ItemText>..\STM32F10x_FWLib\inc</ItemText>
+        </Li>
+        <Li>
+          <IntNumber>6</IntNumber>
+          <ItemText>..\STM32F10x_FWLib\src</ItemText>
+        </Li>
+        <Li>
+          <IntNumber>7</IntNumber>
+          <ItemText>D:\Keil_v5\ARM\ARMCC\include</ItemText>
+        </Li>
+      </LintIncludes>
     </TargetOption>
   </Target>
 
@@ -353,7 +387,7 @@
       <OPTFL>
         <tvExp>1</tvExp>
         <tvExpOptDlg>0</tvExpOptDlg>
-        <IsCurrentTarget>1</IsCurrentTarget>
+        <IsCurrentTarget>0</IsCurrentTarget>
       </OPTFL>
       <CpuCode>0</CpuCode>
       <DebugOpt>
@@ -506,7 +540,7 @@
 
   <Group>
     <GroupName>CORE</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

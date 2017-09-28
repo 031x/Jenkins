@@ -1,5 +1,5 @@
 #include "delay.h"
-#include "sys.h"
+
 ////////////////////////////////////////////////////////////////////////////////// 	 
 //如果使用ucos,则包括下面的头文件即可.
 #if SYSTEM_SUPPORT_UCOS
@@ -35,8 +35,8 @@
 //V1.5修改说明 20120902
 //在delay_us加入ucos上锁，防止由于ucos打断delay_us的执行，可能导致的延时不准。
 ////////////////////////////////////////////////////////////////////////////////// 	 
-static u8  fac_us=0;//us延时倍乘数
-static u16 fac_ms=0;//ms延时倍乘数
+static u32  fac_us=0;//us延时倍乘数
+static u32  fac_ms=0;//ms延时倍乘数
 #ifdef OS_CRITICAL_METHOD 	//如果OS_CRITICAL_METHOD定义了,说明使用ucosII了.
 //systick中断服务函数,使用ucos时用到
 void SysTick_Handler(void)
@@ -111,6 +111,7 @@ void delay_ms(u16 nms)
 	delay_us((u32)(nms*1000));	//普通方式延时,此时ucos无法启动调度.
 }
 #else//不用ucos时
+//lint -e620
 //延时nus
 //nus为要延时的us数.		    								   
 void delay_us(u32 nus)
