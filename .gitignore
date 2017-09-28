@@ -1,4 +1,4 @@
 ./Src/Template/USER/*Build_Output.txt
 ./Src/Template/USER/startup_stm32f10x_hd.lst
 ./Src/Template/USER/Template.map
-./Src/Template/OBJ/*
+./Src/Template/OBJ/
